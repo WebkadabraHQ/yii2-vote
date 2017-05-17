@@ -80,7 +80,9 @@ class Vote extends BaseWidget
             $this->jsChangeCounters = "
                 if (data.success) {
                     $('$selector .vote-count span').text(data.aggregate.positive - data.aggregate.negative);
-                    vote.find('button').removeClass('vote-active');
+                    $('$selector .vote-up-count').text(data.aggregate.positive);
+                    $('$selector .vote-down-count').text(data.aggregate.negative);
+					vote.find('button').removeClass('vote-active');
                     button.addClass('vote-active');
                 }
             ";
